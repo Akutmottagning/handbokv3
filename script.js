@@ -1,15 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const searchBox = document.getElementById("searchBox");
-    const paragraphs = document.querySelectorAll("p");
+    const contentElements = document.querySelectorAll("p, h2, h3, h4, h5, h6");
 
     searchBox.addEventListener("input", function() {
         const term = searchBox.value.toLowerCase();
-        paragraphs.forEach(p => {
-            if (p.textContent.toLowerCase().includes(term)) {
-                p.style.display = "block";
+        contentElements.forEach(el => {
+            if (el.textContent.toLowerCase().includes(term)) {
+                el.style.display = "block";
             } else {
-                p.style.display = "none";
+                el.style.display = "none";
             }
         });
     });
